@@ -30,7 +30,7 @@ export default function DashboardNavigation () {
 
 <span className="text-4xl font-bold block mb-8 mr-8 ml-5">LOGO Admin</span> 
 
-<nav className="space-y-3 text-xl flex-col font-semibold ml-5">
+<nav className="text-xl flex-col font-semibold ml-5">
    <Link href={'./dashboard'} className={pathname.includes('/dashboard') ? activeLink : inactiveLink} >
    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-house">
             <path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8" />
