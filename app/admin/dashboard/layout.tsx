@@ -14,13 +14,13 @@ export default async function DashboardLayout ({children}: {children: ReactNode}
     }
 
     return (
-    <div className="bg-slate-800 min-h-screen flex">
+    <div className="bg-blue-950 min-h-screen flex">
         <DashboardNavigation />
         
-        <div className="bg-white flex-grow mt-2 mr-2 mb-2 rounded-lg">
+        <div className="bg-white flex-grow rounded-lg dark:bg-zinc-950">
          <RightMenu />
          <div className="p-6">
-         <main className="black">{children}</main> 
+         <main>{children}</main> 
          </div>
         </div>
         

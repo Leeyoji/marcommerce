@@ -3,30 +3,13 @@
 import Link from 'next/link';
 import { usePathname } from "next/navigation";  
 import { Separator } from "@/components/ui/separator";
-import { useEffect } from 'react';
-
 
 export default function DashboardNavigation () {
-  const inactiveLink = 'flex gap-2 hover:bg-gray-500 p-4 rounded-l-lg transition-colors duration-200 ease-in-out';
-  const activeLink = 'flex gap-2 p-4 bg-white text-black rounded-l-lg rounded-l-xl transition-transform duration-200 ease-in-out';
+  const inactiveLink = 'flex gap-2 hover:bg-gray-500 hover:text-white p-4 rounded-l-lg';
+  const activeLink = 'flex gap-2 p-4 bg-white text-slate-800 rounded-l-xl dark:bg-zinc-950 dark:text-white';
   const pathname = usePathname();
-  useEffect(() => {
-    const handleTransition = () => {
-        document.body.classList.add('opacity-0');
-        setTimeout(() => {
-            document.body.classList.remove('opacity-0');
-        }, 500); // Match this duration with your CSS transition duration
-    };
-
-    window.addEventListener('beforeunload', handleTransition);
-
-    return () => {
-        window.removeEventListener('beforeunload', handleTransition);
-    };
-}, []);
-
     return (
-<aside className="text-white p-4 pb-0 pr-0 mt-4 font-helvetica">
+<aside className="text-white p-4 pb-0 pr-0 mt-4 font-poppins">
 
 <span className="text-4xl font-bold block mb-8 mr-8 ml-5">LOGO Admin</span> 
 

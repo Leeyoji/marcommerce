@@ -13,18 +13,18 @@ import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
 
 export default function RightMenu () {
     return (
-        <div className="shadow-sm">
+        <div className="stats shadow">
        <div className="flex flex-row-reverse gap-4 pr-9 pt-4 pb-4">  
          <DropdownMenu>
            <DropdownMenuTrigger asChild>
-              <Button variant='outline' size='icon' className="rounded-full">
+              <Button variant='outline' size='icon' className="rounded-full dark:bg-slate-700">
                 <Avatar className="h-[2rem] w-[2rem]">
                    <AvatarImage src="https://github.com/shadcn.png" />
                    <AvatarFallback>CN</AvatarFallback>
                 </Avatar>
               </Button>
            </DropdownMenuTrigger>
-           <DropdownMenuContent align="end">
+           <DropdownMenuContent className="dark:bg-slate-800" align="end">
                 <DropdownMenuLabel>Account</DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem>
