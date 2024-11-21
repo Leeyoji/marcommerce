@@ -13,7 +13,7 @@ import { LogoutLink } from "@kinde-oss/kinde-auth-nextjs/components";
 
 export default function RightMenu () {
     return (
-        <div className="stats shadow">
+        <div>
        <div className="flex flex-row-reverse gap-4 pr-9 pt-4 pb-4">  
          <DropdownMenu>
            <DropdownMenuTrigger asChild>
@@ -34,7 +34,6 @@ export default function RightMenu () {
          </DropdownMenu>
   
 <ModeToggle/>
-
 
        </div>
        </div> 

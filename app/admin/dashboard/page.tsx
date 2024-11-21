@@ -1,11 +1,20 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { ChartNoAxesCombined, DollarSign, FishIcon, ShoppingBasket, ArrowRightLeft } from "lucide-react";
 import { Chart } from "../components/chartdata";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+
 
 export default function Dashboard() {
     return (
       <>
-        <div className="grid gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-4"> 
+      <Tabs defaultValue="account">
+  <TabsList>
+    <TabsTrigger value="account">Overview</TabsTrigger>
+    <TabsTrigger value="password">Analytics</TabsTrigger>
+  </TabsList>
+  <TabsContent value="account">
+
+  <div className="grid gap-4 md:grid-cols-2 md:gap-8 lg:grid-cols-4"> 
           <Card>
             <CardHeader className="flex flex-row items-center gap-2 pb-2">
               <CardTitle>
@@ -59,7 +68,6 @@ export default function Dashboard() {
           </Card>
         </div>
         <div className="grid gap-4 md:gp-8 lg:grid-cols-2 xl:grid-cols-3 mt-10">
-          <div className="col-span-2"> <Chart/></div>
           <Card>
             <CardHeader className='flex flex-row content-center items-center gap-2 pb-5'>
               <CardTitle>Recent Transactions</CardTitle>
@@ -82,21 +90,49 @@ export default function Dashboard() {
             <CardHeader className="items-center font-bold text-3xl"> 
               <CardTitle> Inventory Summary </CardTitle>
             </CardHeader>
-            <CardContent className="flex flex-grid gap-4">
-                <Card>
-                  <CardHeader>
-                    <CardTitle>On Hand Stocks</CardTitle>
-                  </CardHeader>
-                </Card>
-    
-                <Card>
+
+            <CardContent>
+            
+            <div className="flex gap-4">
+              {/* On Hand Stocks Card */}
+              <Card className="flex-1">
+                <CardHeader>
+                  <CardTitle>On Hand Stocks</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p>Details about the stocks available on hand.</p>
+                </CardContent>
+              </Card>
+
+              {/* To be Received Card */}
+              <Card className="flex-1">
                 <CardHeader>
                   <CardTitle>To be Received</CardTitle>
                 </CardHeader>
+                <CardContent>
+                  <p>Details about the stocks to be received.</p>
+                </CardContent>
                 </Card>
-            </CardContent>
+            </div>
+          </CardContent>
           </Card>
         </div>
+  </TabsContent>
+
+  
+  <TabsContent value="password">
+  <div className="col-span-2"> <Chart/></div>
+  </TabsContent>
+</Tabs>
+
+
+
+
+
+
+
+
+       
 
       </>
     );
